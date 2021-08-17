@@ -1,0 +1,393 @@
+@import 'other';
+
+// header
+.head{
+    min-height: 100vh;
+    padding: 0 5vw;
+    @include flexbox;
+    &__nav{
+        position: absolute;
+        top: 20px;
+        padding: 0 5vw;
+        height: 50px;
+        width: 100%;
+        @include flexbox(space-between);
+        .logo{
+            position: relative;
+            height: 50px;
+            width: 50px;
+            background: #FCA311;
+            &::after{
+                position: absolute;
+                content: "";
+                top:0;
+                right: 0;
+                transform: translateX(50%);
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background: linear-gradient(transparent 50%,#000 50%);
+            }
+        }
+        li{
+            display: inline;
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+        }
+    }
+
+    // head content
+    &__content{
+        position: relative;
+        height: 75vh;
+        width: 100%;
+        @include flexbox(space-between);
+        border-radius: 20px;
+        overflow: hidden;
+        background: url(../img/headbg.png) center/cover;
+        &-text{
+            padding: 0 5vw;
+            width: 50%;
+            color: #fff;
+            p{
+                margin: 20px 0;
+            }
+            button{
+                padding:10px 25px;
+                font-weight: 600;
+                background: #fff;
+                border-radius: 50px;
+                cursor: pointer;
+            }
+        }
+        img{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width:40%;
+        }
+    }
+}
+
+// section 1
+.sec1{
+    position: absolute;
+    bottom: -5vh;
+    padding: 0 10vw;
+    &__part1{
+        position: relative;
+        padding:40px 2vw;
+        border-radius: 20px;
+        background: #14213D;
+        color: #fff;
+        @include flexbox(center,flex-start);
+        flex-direction: column;
+        p{
+            width: 70%;
+            margin: 10px 0;
+        }
+        span{
+            width: 100%;
+            font-size: 1.5em;
+            text-align: right;
+            cursor: pointer;
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(../img/sec1.png) center/cover;
+        }
+    }
+}
+
+// section 2
+.sec2{
+    padding-top: 10vh;
+    @include flexbox;
+    flex-direction: column;
+    text-align: center;
+    p{
+        margin: 20px 0;
+    }
+    .brands{
+        @include flexbox;
+        color: #59616D;
+        h2:not(:last-child){
+            margin-right: 20px;
+        }
+    }
+}
+
+// section 3
+.sec3{
+    padding: 15vh 5vw;
+    &__part1{
+        @include flexbox(space-around,flex-start);
+        &-img{
+            position: relative;
+            width: 30%;
+            img{
+                width: 100%;
+            }
+            &::before{
+                position: absolute;
+                content: "";
+                top: 50%;
+                left: 0;
+                height: 70px;
+                width: 70px;
+                transform: translate(-50%,0%);
+                border-radius: 50%;
+                background: #FCA311;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                height: 200px;
+                width: 200px;
+                transform: translate(40%,-40%);
+                background: url(../img/dot_grid.png) center/cover;
+            }
+        }
+        &__content{
+            margin-top: 50px;
+            h3{
+                font-weight: 600;
+                margin: 10px 0;
+                width: 300px;
+            }
+            &-boxs{
+                margin-top: 30px;
+                padding: 5px;
+                width: 450px;
+                @include grid(15px);
+                p{margin-top: 10px;}    
+            }
+        }
+    }
+    &__part2{
+        padding: 10vh 5vw;
+        width: 100%;
+        @include flexbox(space-between);
+        &__text{
+            width: 50%;
+            @include flexbox(center,flex-start);
+            flex-direction: column;
+            p{
+                margin: 20px 0;
+                width: 70%;
+            }
+            button{
+                padding:10px 25px;
+                font-weight: 600;
+                background: #14213D;
+                color: #fff;
+                border-radius: 50px;
+                cursor: pointer;
+            }
+        }
+        &__content{
+            position: relative;
+            @include grid;
+            &::before{
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 0;
+                transform: translate(-50%,0%);
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background:linear-gradient(transparent 50%,#00000080 50%);
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                transform: translate(50%,-50%);
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: #FCA31180;
+            }
+        }
+    }
+}
+
+// section 4
+.sec4{
+    padding: 0 5vw;
+    &__nav{
+        width: 100%;
+        @include flexbox(space-between);
+        &-btn{
+            width: 120px;
+            @include flexbox(space-between);
+            h2{
+                width: 50px;
+                height: 50px;
+                @include flexbox;
+                background: #000;
+                color: #fff;
+                border-radius: 5px;
+                &:first-child{
+                    background: #f1f1f1;
+                }
+            }
+        }
+    }
+    &__cards{
+        margin: 50px 0;
+        @include flexbox(space-around);
+        &-card{
+            @include flexbox;
+            flex-direction: column;
+            h3{
+                margin: 10px 0;
+            }
+            button{
+                margin: 10px 0;
+                width: 80%;
+                height: 50px;
+                border-radius: 50px;
+                background: #000;
+                color: #fff;
+                font-size: 16px;
+                @include flexbox;
+            }
+        }
+    }
+}
+
+// section 5
+.sec5{
+    @include flexbox(space-around);
+    min-height: 100vh;
+    padding: 10vh 5vw;
+    &-img{
+        position: relative;
+        &::before{
+            position: absolute;
+            z-index: -1;
+            content: '';
+            top: 0;
+            left: 0;
+            transform: translate(-50%,50%);
+            height: 100px;
+            width: 100px;
+            background: #FCA311;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            bottom: 0;
+            right: 0;
+            transform: translate(50%,-50%);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: #FCA31180;
+        }
+    }
+    &-text{
+        max-width: 600px;
+        @include flexbox(center,flex-start);
+        flex-direction: column;
+        p{
+            margin: 15px 0;
+        }
+        .btn{
+            width: 120px;
+            margin-top: 100px;
+            align-self: flex-end;
+            @include flexbox(space-between);
+            h2{
+                width: 50px;
+                height: 50px;
+                @include flexbox;
+                background: #000;
+                color: #fff;
+                border-radius: 5px;
+            }
+        }
+    }   
+}
+
+// footer
+.footer{
+    padding: 20px 5vw;
+    @include flexbox;
+    &__content{
+        position: relative;
+        width: 100%;
+        padding: 100px 20px;
+        border-radius: 10px;
+        @include flexbox(space-between);
+        background: url(../img/footer_bg.png) center/cover;
+        &-brand{
+            @include flexbox(center,flex-start);
+            flex-direction: column;
+            .logo{
+                position: relative;
+                margin: 10px 0;
+                height: 50px;
+                width: 50px;
+                background: #FCA311;
+                &::after{
+                    position: absolute;
+                    content: "";
+                    top:0;
+                    right: 0;
+                    transform: translateX(50%);
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    background: linear-gradient(transparent 50%,#000 50%);
+                }
+            }
+            h4{
+                position: absolute;
+                bottom: 20px;
+            }
+        }
+        ul{
+            padding: 0 20px;
+            @include flexbox(center,flex-start);
+            li{
+                @include flexbox(center,flex-start);
+                flex-direction: column;
+                a{
+                    margin: 5px 0;
+                }
+                &:not(:last-child){
+                    margin-right: 50px;
+                }
+                &:last-child{
+                    position: relative;
+                    height: 50px;
+                    width: 50px;
+                    background: #fff;
+                    border-radius: 5px;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        right: 0;
+                        transform: translate(50%,50%);
+                        height: 50px;
+                        width: 50px;
+                        background: url(../img/footer_img.png) center/cover;
+                    }
+                }
+            }
+        }
+    }
+}
